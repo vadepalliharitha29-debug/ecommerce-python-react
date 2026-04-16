@@ -87,10 +87,10 @@
 // export default App
 import React from 'react'
 
-
 import { Routes, Route } from "react-router-dom"
 
-import Navbar from "./components/Navbar"   // ✅ IMPORT NAVBAR
+import Navbar from "./components/Navbar"
+import Footer from "./components/Footer"   // ✅ IMPORT FOOTER
 
 import Home from "./pages/Home"
 import Shop from "./pages/Shop"
@@ -105,23 +105,25 @@ import Orders from './pages/Orders'
 
 function App() {
   return (
-    <>
-      <Navbar />   {/* ✅ ADD THIS */}
+    <div className="min-h-screen flex flex-col"> {/* Wrapper to push footer to bottom */}
+      <Navbar />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/product/:id" element={<ProductDetails />} />
-        <Route path="/categories" element={<Categories />} />
-        <Route path="/category/:name" element={<Category />} />
-        <Route path="/auth" element={<Auth />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/checkout" element={<Checkout />} />
-        <Route path="/orders" element={<Orders />} />
+      <main className="flex-grow">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/product/:id" element={<ProductDetails />} />
+          <Route path="/categories" element={<Categories />} />
+          <Route path="/category/:name" element={<Category />} />
+          <Route path="/auth" element={<Auth />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/orders" element={<Orders />} />
+        </Routes>
+      </main>
 
-
-      </Routes>
-    </>
+      <Footer /> {/* ✅ ADD FOOTER HERE */}
+    </div>
   )
 }
 

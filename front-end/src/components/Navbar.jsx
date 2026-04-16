@@ -810,15 +810,21 @@ function Navbar() {
   const [showProfile, setShowProfile] = useState(false);
   const [editMode, setEditMode] = useState(false);
 
-  // Load user from localStorage
-  const [user, setUser] = useState(
-    JSON.parse(localStorage.getItem("user")) || {
-      name: "",
-      email: "",
-      phone: "",
-      address: "",
-    }
-  );
+  // Load user from localStorage and intercept login emails
+  const [user, setUser] = useState(() => {
+    const savedUser = JSON.parse(localStorage.getItem("user")) || {};
+    const loggedInEmail = localStorage.getItem("email") || "";
+    
+    // Automatically generate a display name if they just logged in
+    const autoName = loggedInEmail ? loggedInEmail.split('@')[0] : "";
+    
+    return {
+      name: savedUser.name || autoName,
+      email: loggedInEmail || savedUser.email || "",
+      phone: savedUser.phone || "",
+      address: savedUser.address || "",
+    };
+  });
 
   // Handle input change
   const handleChange = (e) => {
