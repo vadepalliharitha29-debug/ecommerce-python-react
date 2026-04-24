@@ -90,10 +90,10 @@ import React from 'react'
 import { Routes, Route } from "react-router-dom"
 
 import Navbar from "./components/Navbar"
-import Footer from "./components/Footer"   // ✅ IMPORT FOOTER
+import Footer from "./components/Footer"
 
 import Home from "./pages/Home"
-import Shop from "./pages/Shop"
+import Shop from "./pages/shop" // <-- FIXED (Netlify is case sensitive, file is shop.jsx)
 import ProductDetails from "./pages/ProductDetails"
 import Categories from "./pages/Categories"
 import Category from "./pages/Category"
