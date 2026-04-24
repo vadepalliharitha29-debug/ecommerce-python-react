@@ -60,7 +60,7 @@
 //                   {/* IMAGE */}
 //                   <div className="h-60 bg-gray-100 flex items-center justify-center overflow-hidden">
 //                     <img
-//                       src={`http://127.0.0.1:8000${product.image}`}
+//                       src={`${import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/api/', '') : 'http://127.0.0.1:8000'}${product.image}`}
 //                       alt={product.name}
 //                       className="h-full object-contain group-hover:scale-105 transition duration-300"
 //                     />
@@ -173,7 +173,7 @@ function Category() {
                     </span>
 
                     <img
-                      src={`http://127.0.0.1:8000${product.image}`}
+                      src={`${import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/api/', '') : 'http://127.0.0.1:8000'}${product.image}`}
                       alt={product.name}
                       className="h-full object-contain group-hover:scale-110 transition duration-500"
                     />

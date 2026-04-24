@@ -10,7 +10,7 @@
 //   const [product, setProduct] = useState(null)
 
 //   useEffect(() => {
-//     fetch("http://127.0.0.1:8000/api/products/")
+//     fetch((import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL + 'products/' : 'http://127.0.0.1:8000/api/products/'))
 //       .then(res => res.json())
 //       .then(data => {
 //         const found = data.find(p => p.id === parseInt(id))
@@ -28,7 +28,7 @@
 //         {/* IMAGE SECTION */}
 //         <div>
 //           <img
-//             src={`http://127.0.0.1:8000${product.image}`}
+//             src={`${import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/api/', '') : 'http://127.0.0.1:8000'}${product.image}`}
 //             alt={product.name}
 //            className="w-full h-[400px] object-contain rounded-xl bg-gray-100"
 //           />
@@ -81,7 +81,7 @@
 //   const [product, setProduct] = useState(null)
 
 //   useEffect(() => {
-//     fetch("http://127.0.0.1:8000/api/products/")
+//     fetch((import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL + 'products/' : 'http://127.0.0.1:8000/api/products/'))
 //       .then((res) => res.json())
 //       .then((data) => {
 //         const found = data.find((p) => p.id === parseInt(id))
@@ -104,7 +104,7 @@
 //         {/* IMAGE SECTION */}
 //         <div>
 //           <img
-//             src={`http://127.0.0.1:8000${product.image}`}
+//             src={`${import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/api/', '') : 'http://127.0.0.1:8000'}${product.image}`}
 //             alt={product.name}
 //             className="w-full h-[400px] object-contain rounded-xl bg-gray-100"
 //           />
@@ -156,7 +156,7 @@
 
 //   useEffect(() => {
 //     // Fetch all products and find the one with matching id
-//     fetch("http://127.0.0.1:8000/api/products/")
+//     fetch((import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL + 'products/' : 'http://127.0.0.1:8000/api/products/'))
 //       .then((res) => res.json())
 //       .then((data) => {
 //         const found = data.find((p) => p.id === parseInt(id))
@@ -197,7 +197,7 @@
 //         {/* IMAGE SECTION */}
 //         <div>
 //           <img
-//             src={`http://127.0.0.1:8000${product.image}`}
+//             src={`${import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/api/', '') : 'http://127.0.0.1:8000'}${product.image}`}
 //             alt={product.name}
 //             className="w-full h-[400px] object-contain rounded-xl bg-gray-100"
 //           />
@@ -244,7 +244,7 @@
 //   const sizes = ["XS", "S", "M", "L", "XL", "XXL"] // Available sizes
 
 //   useEffect(() => {
-//     fetch("http://127.0.0.1:8000/api/products/")
+//     fetch((import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL + 'products/' : 'http://127.0.0.1:8000/api/products/'))
 //       .then((res) => res.json())
 //       .then((data) => {
 //         const found = data.find((p) => p.id === parseInt(id))
@@ -289,7 +289,7 @@
 //         {/* IMAGE SECTION */}
 //         <div>
 //           <img
-//             src={`http://127.0.0.1:8000${product.image}`}
+//             src={`${import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/api/', '') : 'http://127.0.0.1:8000'}${product.image}`}
 //             alt={product.name}
 //             className="w-full h-[400px] object-contain rounded-xl bg-gray-100"
 //           />
@@ -396,7 +396,7 @@ function ProductDetails() {
   const sizes = ["XS", "S", "M", "L", "XL", "XXL"]
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/products/")
+    fetch((import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL + 'products/' : 'http://127.0.0.1:8000/api/products/'))
       .then((res) => res.json())
       .then((data) => {
         const found = data.find((p) => p.id === parseInt(id))
@@ -457,7 +457,7 @@ function ProductDetails() {
         {/* IMAGE SECTION */}
         <div>
           <img
-            src={`http://127.0.0.1:8000${product.image}`}
+            src={`${import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/api/', '') : 'http://127.0.0.1:8000'}${product.image}`}
             alt={product.name}
             className="w-full h-[400px] object-contain rounded-xl bg-gray-100"
           />

@@ -69,7 +69,7 @@ function Checkout() {
           {items.map((product, idx) => (
              <div key={idx} className="flex items-center space-x-4 border-b pb-4">
                <img
-                 src={product.image.startsWith('http') ? product.image : `http://127.0.0.1:8000${product.image}`}
+                 src={product.image.startsWith('http') ? product.image : `${import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/api/', '') : 'http://127.0.0.1:8000'}${product.image}`}
                  alt={product.name}
                  className="w-20 h-20 object-contain rounded"
                />

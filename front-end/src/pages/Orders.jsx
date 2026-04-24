@@ -54,7 +54,7 @@ function Orders() {
                       <div key={item.id} className="flex items-center space-x-4">
                         {item.product_image && (
                             <img
-                                src={item.product_image.startsWith('http') ? item.product_image : `http://127.0.0.1:8000${item.product_image}`}
+                                src={item.product_image.startsWith('http') ? item.product_image : `${import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/api/', '') : 'http://127.0.0.1:8000'}${item.product_image}`}
                                 alt={item.product_name}
                                 className="w-16 h-16 object-contain rounded border"
                             />
