@@ -18,7 +18,7 @@ class Product(models.Model):
     name = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     description = models.TextField()
-    image = models.ImageField(upload_to="products/")
+    image = models.URLField(max_length=1000, null=True, blank=True, help_text="Paste an image URL from Unsplash or Google")
     stock = models.IntegerField(default=0)
 
     def __str__(self):

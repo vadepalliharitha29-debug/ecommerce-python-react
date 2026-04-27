@@ -28,7 +28,7 @@
 //         {/* IMAGE SECTION */}
 //         <div>
 //           <img
-//             src={`${import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/api/', '') : 'http://127.0.0.1:8000'}${product.image}`}
+//             src={product.image?.startsWith('http') ? product.image : `${import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/api/', '') : 'http://127.0.0.1:8000'}${product.image}`}
 //             alt={product.name}
 //            className="w-full h-[400px] object-contain rounded-xl bg-gray-100"
 //           />
@@ -104,7 +104,7 @@
 //         {/* IMAGE SECTION */}
 //         <div>
 //           <img
-//             src={`${import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/api/', '') : 'http://127.0.0.1:8000'}${product.image}`}
+//             src={product.image?.startsWith('http') ? product.image : `${import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/api/', '') : 'http://127.0.0.1:8000'}${product.image}`}
 //             alt={product.name}
 //             className="w-full h-[400px] object-contain rounded-xl bg-gray-100"
 //           />
@@ -197,7 +197,7 @@
 //         {/* IMAGE SECTION */}
 //         <div>
 //           <img
-//             src={`${import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/api/', '') : 'http://127.0.0.1:8000'}${product.image}`}
+//             src={product.image?.startsWith('http') ? product.image : `${import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/api/', '') : 'http://127.0.0.1:8000'}${product.image}`}
 //             alt={product.name}
 //             className="w-full h-[400px] object-contain rounded-xl bg-gray-100"
 //           />
@@ -289,7 +289,7 @@
 //         {/* IMAGE SECTION */}
 //         <div>
 //           <img
-//             src={`${import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/api/', '') : 'http://127.0.0.1:8000'}${product.image}`}
+//             src={product.image?.startsWith('http') ? product.image : `${import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/api/', '') : 'http://127.0.0.1:8000'}${product.image}`}
 //             alt={product.name}
 //             className="w-full h-[400px] object-contain rounded-xl bg-gray-100"
 //           />
@@ -457,7 +457,7 @@ function ProductDetails() {
         {/* IMAGE SECTION */}
         <div>
           <img
-            src={`${import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/api/', '') : 'http://127.0.0.1:8000'}${product.image}`}
+            src={product.image?.startsWith('http') ? product.image : `${import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/api/', '') : 'http://127.0.0.1:8000'}${product.image}`}
             alt={product.name}
             className="w-full h-[400px] object-contain rounded-xl bg-gray-100"
           />

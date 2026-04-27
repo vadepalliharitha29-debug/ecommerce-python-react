@@ -176,7 +176,7 @@
 //               className="flex bg-white rounded-xl shadow p-4 items-center space-x-4"
 //             >
 //               <img
-//                 src={`${import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/api/', '') : 'http://127.0.0.1:8000'}${item.image}`}
+//                 src={item.image?.startsWith('http') ? item.image : `${import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/api/', '') : 'http://127.0.0.1:8000'}${item.image}`}
 //                 alt={item.name}
 //                 className="w-24 h-24 object-contain rounded"
 //               />
@@ -276,7 +276,7 @@ function Cart() {
               className="flex bg-white rounded-xl shadow p-4 items-center space-x-4"
             >
               <img
-                src={`${import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/api/', '') : 'http://127.0.0.1:8000'}${item.image}`}
+                src={item.image?.startsWith('http') ? item.image : `${import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/api/', '') : 'http://127.0.0.1:8000'}${item.image}`}
                 alt={item.name}
                 className="w-24 h-24 object-contain rounded"
               />
