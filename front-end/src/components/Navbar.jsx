@@ -978,6 +978,43 @@ function Navbar() {
 
         </div>
       </div>
+
+      {/* EXPANDABLE MOBILE MENU */}
+      {mobileMenuOpen && (
+        <div className="md:hidden mt-4 space-y-3 text-gray-700 font-medium border-t pt-4">
+
+          <Link to="/" onClick={() => setMobileMenuOpen(false)} className="block hover:text-pink-500">
+            Home
+          </Link>
+
+          <Link to="/shop" onClick={() => setMobileMenuOpen(false)} className="block hover:text-pink-500">
+            Shop
+          </Link>
+
+          <Link to="/categories" onClick={() => setMobileMenuOpen(false)} className="block hover:text-pink-500">
+            Categories
+          </Link>
+          
+          <Link to="/orders" onClick={() => setMobileMenuOpen(false)} className="block hover:text-pink-500">
+            My Orders
+          </Link>
+
+          {/* SIGN IN / LOGOUT */}
+          {localStorage.getItem('accessToken') ? (
+            <button onClick={() => { handleLogout(); setMobileMenuOpen(false); }} className="block w-full text-left text-gray-700 hover:text-pink-500">
+              Logout
+            </button>
+          ) : (
+            <Link to="/auth" onClick={() => setMobileMenuOpen(false)}>
+              <button className="block w-full text-left hover:text-pink-500">
+                Sign In
+              </button>
+            </Link>
+          )}
+
+        </div>
+      )}
+
     </nav>
   );
 }
