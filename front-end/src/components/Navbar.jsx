@@ -841,6 +841,8 @@ function Navbar() {
     localStorage.removeItem("accessToken");
     localStorage.removeItem("refreshToken");
     localStorage.removeItem("email");
+    localStorage.removeItem("user");
+    localStorage.removeItem("cart"); // CLEAR CART ON LOGOUT
     window.location.reload();
   };
 

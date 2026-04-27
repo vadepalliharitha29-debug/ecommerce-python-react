@@ -50,7 +50,7 @@ class CartItemSerializer(serializers.ModelSerializer):
 
 class OrderItemSerializer(serializers.ModelSerializer):
     product_name = serializers.ReadOnlyField(source='product.name')
-    product_image = serializers.ImageField(source='product.image', read_only=True)
+    product_image = serializers.URLField(source='product.image', read_only=True)
 
     class Meta:
         model = OrderItem
