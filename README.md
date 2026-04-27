@@ -17,7 +17,7 @@ Miss Elegance is a modern, fully responsive, full-stack ecommerce web applicatio
 
 ### Backend (API)
 * **Framework:** Django & Django REST Framework (DRF)
-* **Database:** PostgreSQL
+* **Database:** PostgreSQL,MySQL
 * **Authentication:** JWT (JSON Web Tokens) via SimpleJWT
 * **Hosting:** Render
 
